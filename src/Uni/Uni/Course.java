@@ -2,6 +2,9 @@ package Uni;
 
 import java.util.List;
 
+/**
+ * the class for defining what a COURSE is
+ */
 public class Course {
     private String name;
     private Person teacher;
@@ -9,6 +12,14 @@ public class Course {
     private int credits;
     private List<Student> studentsEnrolled;
 
+    /**
+     *
+     * @param name the name of the course
+     * @param teacher the Teacher which teaches it
+     * @param maxEnrollment the maximum number of students that can part-take the course
+     * @param credits the amount of credits the course has
+     * @param studentsEnrolled the list of students currently tqking the course
+     */
     public Course(String name, Person teacher, int maxEnrollment, int credits, List<Student> studentsEnrolled) {
         this.name = name;
         this.teacher = teacher;
@@ -47,5 +58,13 @@ public class Course {
 
     public void setCredits(int credits) {
         this.credits = credits;
+    }
+
+    public List<Student> getStudentsEnrolled() {
+        return studentsEnrolled;
+    }
+
+    public void setStudentsEnrolled(List<Student> studentsEnrolled) {
+        this.studentsEnrolled = studentsEnrolled;
     }
 }

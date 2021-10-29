@@ -13,8 +13,7 @@ public class TeacherRepo extends IMemoryRepository<Teacher>{
                 .findFirst()
                 .orElseThrow();
 
-            teachertoUpdate.setLastname(obj.getLastname());
-            teachertoUpdate.setFirstname(obj.getFirstname());
+            teachertoUpdate=obj;
             return teachertoUpdate;
     }
 }

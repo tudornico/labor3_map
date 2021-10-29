@@ -1,8 +1,16 @@
 package Uni;
 
+/**
+ *class defining a person
+ */
 public class Person {
-    private String firstname;
-    private String lastname;
+    protected String firstname;
+    protected String lastname;
+
+    public Person(String firstname, String lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
 
     public String getFirstname() {
         return firstname;
