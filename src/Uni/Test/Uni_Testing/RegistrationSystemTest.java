@@ -1,8 +1,9 @@
-package Uni;
+package Uni_Testing;
 
-import com.sun.source.tree.YieldTree;
+import Uni.*;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -10,10 +11,12 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class RegistrationSystemTest {
+public  class RegistrationSystemTest {
     private RegistrationSystem test;
 
-    public RegistrationSystemTest(){}
+    public RegistrationSystemTest(RegistrationSystem test) {
+        this.test = test;
+    }
 
 
     @Before
@@ -45,9 +48,9 @@ public class RegistrationSystemTest {
 
         //inserting students into studentrepo
         StudentRepo studentRepo = new StudentRepo();
-        studentRepo.update(student1);
-        studentRepo.update(student2);
-        studentRepo.update(student3);
+        studentRepo.create(student1);
+        studentRepo.create(student2);
+        studentRepo.create(student3);
         this.test.setStudentRepo(studentRepo); // putting into the register system variable in the test class
 
         //inserting courses in teachers
@@ -60,8 +63,8 @@ public class RegistrationSystemTest {
 
         //inserting taechers into teacherrepo
         TeacherRepo teacherRepo =new TeacherRepo();
-        teacherRepo.update(t1);
-        teacherRepo.update(t2);
+        teacherRepo.create(t1);
+        teacherRepo.create(t2);
         this.test.setTeacherRepo(teacherRepo);
 
         // inserting students in courses
@@ -75,15 +78,16 @@ public class RegistrationSystemTest {
         // inserting course in courseRepo
 
         CourseRepo courseRepo = new CourseRepo();
-        courseRepo.update(course1);
-        courseRepo.update(course2);
+        courseRepo.create(course1);
+        courseRepo.create(course2);
         this.test.setCourseRepo(courseRepo);
 
     }
 
+
     @Test
     void register() {
-    Course c1 = this.test.getCourseRepo().getAll().get(1); // course1 from population
+        Course c1 = this.test.getCourseRepo().getAll().get(1); // course1 from population
 
         Student student1 = this.test.getStudentRepo().getAll().get(0);
         Student student2 = this.test.getStudentRepo().getAll().get(1);
@@ -95,7 +99,7 @@ public class RegistrationSystemTest {
 
     @Test
     void retrieveCoursesWithFreePlaces() {
-        Assert.assertEquals(this.test.retrieveCoursesWithFreePlaces(),this.test.getCourseRepo().getAll());
+        assertEquals(this.test.retrieveCoursesWithFreePlaces(),this.test.getCourseRepo().getAll());
     }
 
     @Test

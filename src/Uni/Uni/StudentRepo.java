@@ -6,13 +6,16 @@ public class StudentRepo extends IMemoryRepository<Student>{
     }
 
     @Override
+    /**
+     * we update the total credits of the student
+     */
     public Student update(Student obj) {
-        Student studentToUpdate = this.repoList.stream()
-                .filter(Student -> (Student.getLastname() == obj.getLastname()))
-                .findFirst()
-                .orElseThrow();
-
-        studentToUpdate=obj;
-        return studentToUpdate;
+        for(Student s : repoList){
+            if(s.getStudentId() == obj.getStudentId()){
+                s.setTotalCredits(obj.getTotalCredits());
+                return s;
+            }
+        }
+        throw new IllegalArgumentException("Element not found");
     }
 }

@@ -1,18 +1,22 @@
 package Uni;
 
 public class CourseRepo extends IMemoryRepository<Course> {
-    CourseRepo(){
+    public CourseRepo(){
         super();
     }
 
     @Override
+    /**
+     * we are going to update the teacher that teaches the course
+     */
     public Course update(Course obj) {
-        Course CoursetoUpdate = this.repoList.stream()
-                .filter(Course -> (Course.getName() == obj.getName()))
-                .findFirst()
-                .orElseThrow();
-
-        CoursetoUpdate = obj;
-        return CoursetoUpdate;
+        for(Course c : repoList){
+            if(c.getName().equals(obj.getName()))
+            {
+                c.setTeacher(obj.getTeacher());
+                return c;
+            }
+        }
+        throw new IllegalArgumentException("Element not found");
     }
 }

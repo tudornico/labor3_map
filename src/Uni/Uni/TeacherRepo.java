@@ -1,19 +1,21 @@
 package Uni;
 
-import javax.swing.*;
-
 public class TeacherRepo extends IMemoryRepository<Teacher>{
     public TeacherRepo(){
         super();
     }
     @Override
+    /**
+     * we update the student list from the teacher
+     */
     public Teacher update(Teacher obj) {
-        Teacher teachertoUpdate = this.repoList.stream()
-                .filter(Teacher -> (Teacher.getLastname() == obj.getLastname() && Teacher.getFirstname() == obj.getFirstname()))
-                .findFirst()
-                .orElseThrow();
-
-            teachertoUpdate=obj;
-            return teachertoUpdate;
+        for(Teacher T : repoList){
+            if( T.getFirstname().equals(obj.getFirstname()) && T.getLastname().equals(obj.getLastname()))
+            {
+                T.setCourses(obj.getCourses());
+                return T;
+            }
+        }
+        throw new IllegalArgumentException("Element not found");
     }
 }
