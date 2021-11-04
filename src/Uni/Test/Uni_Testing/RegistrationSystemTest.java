@@ -1,9 +1,10 @@
 package Uni_Testing;
 
+import Repo.CourseRepo;
+import Repo.StudentRepo;
+import Repo.TeacherRepo;
 import Uni.*;
-import org.junit.Assert;
 import org.junit.Before;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -14,8 +15,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public  class RegistrationSystemTest {
     private RegistrationSystem test;
 
-    public RegistrationSystemTest(RegistrationSystem test) {
-        this.test = test;
+    public RegistrationSystemTest() {
+
     }
 
 

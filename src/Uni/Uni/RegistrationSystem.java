@@ -1,5 +1,9 @@
 package Uni;
 
+import Repo.CourseRepo;
+import Repo.StudentRepo;
+import Repo.TeacherRepo;
+
 import java.util.ArrayList;
 import java.util.List;
 

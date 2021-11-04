@@ -1,6 +1,9 @@
-package Uni;
+package Repo;
 
-public class StudentRepo extends IMemoryRepository<Student>{
+import Uni.IMemoryRepository;
+import Uni.Student;
+
+public class StudentRepo extends IMemoryRepository<Student> {
     public StudentRepo() {
         super();
     }

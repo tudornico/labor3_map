@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/Uni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Uni/Test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/Uni/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Uni/Repo_testing" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

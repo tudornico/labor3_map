@@ -1,4 +1,7 @@
-package Uni;
+package Repo;
+
+import Uni.Course;
+import Uni.IMemoryRepository;
 
 public class CourseRepo extends IMemoryRepository<Course> {
     public CourseRepo(){

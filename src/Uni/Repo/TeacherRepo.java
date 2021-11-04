@@ -1,12 +1,15 @@
-package Uni;
+package Repo;
 
-public class TeacherRepo extends IMemoryRepository<Teacher>{
+import Uni.IMemoryRepository;
+import Uni.Teacher;
+
+public class TeacherRepo extends IMemoryRepository<Teacher> {
     public TeacherRepo(){
         super();
     }
     @Override
     /**
-     * we update the student list from the teacher
+     * we update the course list from the teacher
      */
     public Teacher update(Teacher obj) {
         for(Teacher T : repoList){
